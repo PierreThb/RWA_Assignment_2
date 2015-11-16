@@ -11,9 +11,11 @@
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="assets/js/blog.js" ></script>
+        <script src="assets/js/flickr.js"></script>
     </head>
     <body>
-        <!-- Début de la première page -->
+        <!-- Début HOMEPAGE -->
         <div data-role="page" id="home">
 
             <div data-role="header">
@@ -26,41 +28,42 @@
                     <li data-icon="grid" ><a href="#flickr">Pictures</a></li>
                     <li data-icon="location" ><a href="#bar">Map</a></li>
                 </ul>
-                <p>Voir la page interne appelée </p>
             </div><!-- /content -->
 
-            <div data-role="footer">
+            <div data-position="fixed" data-role="footer">
                 <h4>Pied de page</h4>
             </div><!-- /footer -->
         </div><!-- /page -->
 
-        <!-- Début de la seconde page -->
+        <!-- Début BLOG -->
         <div data-role="page" id="blog">
             <div data-role="header">
                 <h1>Blog</h1>
             </div><!-- /header -->
 
-            <div data-role="content">
-                <p>Here is the content of the blog</p>
+            <div data-role="content" id="blog_content" >
             </div><!-- /content -->
 
-            <div data-role="footer">
-                <h4><a href="#home">Retour vers foo</a></h4>
-            </div><!-- /footer -->
-        </div><!-- /page -->
+            <div data-position="fixed" data-role="footer">
+                <h4><a href="#home">Back to homepage</a></h4>
+            </div>
+        </div>
 
+        <!-- DÉBUT DIV FLICKR -->
         <div data-role="page" id="flickr" >
             <div data-role="header">
                 <h1>Flickr</h1>
-            </div><!-- /header -->
+            </div><
 
+            <!-- Contenu -->
             <div data-role="content">
                 <p>Here are the pictures of flickr</p>
-            </div><!-- /content -->
+            </div><
 
-            <div data-role="footer">
+            <div data-position="fixed" data-role="footer">
                 <h4><a href="#home">Back to homepage</a></h4>
             </div><!-- /footer -->
         </div>
+        <script src="assets/js/home.js" ></script>
     </body>
 </html>
