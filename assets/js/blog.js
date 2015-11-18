@@ -9,10 +9,10 @@ function Blog() {
 }
 
 Blog.prototype = {
-    beforeLoad : function(){
-         $("#blog_content").empty();
+    beforeLoad: function () {
+        $("#blog_content").empty();
     },
-    afterLoad : function () {
+    afterLoad: function () {
         $.mobile.loading('show', {
             text: "Loading blog content",
             textVisible: true,

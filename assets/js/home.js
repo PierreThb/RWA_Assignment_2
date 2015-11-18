@@ -6,8 +6,6 @@
 
 
 $(document).ready(function () {
-    console.log($("div[data-role='page']"));
-
     $("body").on("pagecontainerbeforetransition", function (event, ui) {
         var nwPage = ui.toPage[0];
         var nwObj = window[$(nwPage).attr('id')];
