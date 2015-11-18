@@ -1,5 +1,3 @@
-<?php header("Access-Control-Allow-Origin: http://localhost"); ?>
-
 <!DOCTYPE html>
 
 
@@ -10,12 +8,15 @@
         <title>Champagne houses</title>
 
         <!-- To be changed with the custome versions of jquery-mobile -->
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <link type="text/css" rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
         
-        <link rel="stylesheet" href="assets/css/home.css" />
+        <link type="text/css" rel="stylesheet" href="assets/css/home.css" />
         
+        <!--Libraries-->
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        
+        <!--Custom-->
         <script src="assets/js/blog.js" type="text/javascript"  ></script>
         <script src="assets/js/flickr.js" type="text/javascript" ></script>
         <script src="assets/js/map.js" type="text/javascript" ></script>
@@ -37,7 +38,7 @@
             </div><!-- /content -->
 
             <div data-position="fixed" data-role="footer">
-                <h4>Pied de page</h4>
+                <h4>Footer </h4>
             </div><!-- /footer -->
         </div><!-- /page -->
 

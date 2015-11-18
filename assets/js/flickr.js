@@ -10,6 +10,7 @@ function Flickr() {
 
 Flickr.prototype = {
     beforeLoad: function () {
+        var self = this;
         $("#image").empty();
         //Appelé avant la transition 
         $.ajax({
@@ -26,20 +27,10 @@ Flickr.prototype = {
                 api_sig: '25f3bae3d4de72e13b85cb62cc2eb1f2'
             }
         }).success(function (data) {
-            console.log(data);
-            
             if (data.stat === 'ok') {
-                var output = $("<div/>", {id: "my_div"});
-                $.each(data.photos.photo, function (index, val) {
-                    var img = $("<img/>", {
-                        src: 'https://farm' + val.farm + '.staticflickr.com/' + val.server + '/' + val.id + '_' + val.secret + '.jpg'
-                    });
-                    console.log(img);
-                    output.append(img);
-                });
-                $("#image").append(output);
+                self.displayImages(data.photos.photo);
             } else {
-                var $err = $("<p/>").css("color","red").text("An error occured : impossible to access flickr photos")
+                var $err = $("<p/>").css("color", "red").text("An error occured : impossible to access flickr photos")
                 $("#image").append($err);
             }
         });
@@ -47,7 +38,17 @@ Flickr.prototype = {
     },
     afterLoad: function () {
         //Appelé après la transition
-        
+
+    },
+    displayImages:function (imgArr) {
+        var $div = $('<div/>', {id: 'photos'});
+        $.each(imgArr, function (index, val) {
+            var img = $("<img/>", {
+                src: 'https://farm' + val.farm + '.staticflickr.com/' + val.server + '/' + val.id + '_' + val.secret + '.jpg'
+            });
+            $div.append(img);
+        });
+        $("#image").append($div);
     }
 };
 
