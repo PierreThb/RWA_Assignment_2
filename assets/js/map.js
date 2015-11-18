@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/* global google */
+
 function Map() {
 
 }
 
 Map.prototype = {
     beforeLoad: function () {
-
     },
     afterLoad: function () {
-
+        google.maps.event.trigger(this.map, 'resize');
     },
     loadMap: function () {
         var key = 'AIzaSyB4wcYndpXCDGPxRRm5r5yhIJOfoyE8Fi8',
@@ -36,7 +37,7 @@ Map.prototype = {
             type: 'poly'
         };
 
-        var map = new google.maps.Map(document.getElementById('map_container'), {
+        this.map = new google.maps.Map(document.getElementById('map_container'), {
             zoom: 10,
             center: myLatLng
         });
@@ -50,18 +51,18 @@ Map.prototype = {
             content: contentString
         });
         var marker = new google.maps.Marker({position: myLatLng,
-            map: map,
+            map: this.map,
             icon: image,
             shape: shape,
             title: 'Champagne houses quarters'
         });
 
-        directionsDisplay.setMap(map);
+        directionsDisplay.setMap(this.map);
         directionsDisplay.setPanel(document.getElementById('map_direction'));
 
         //marker.addListener('mouseover', addAnimation);
         marker.addListener('click', function () {
-            infowindow.open(map, marker);
+            infowindow.open(this.map, marker);
         });
 
 
@@ -79,7 +80,7 @@ Map.prototype = {
             });
         }
 
-        google.maps.event.addListener(map, "click", function (event) {
+        google.maps.event.addListener(this.map, "click", function (event) {
             travelFrom(event.latLng);
         });
 

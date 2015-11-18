@@ -46,7 +46,14 @@ html {
   #photos {
     -moz-column-count: 2;
     -webkit-column-count: 2;
-    column-count: 2; } }
+    column-count: 2; }
+
+  #map #map_direction {
+    width: 100%;
+    overflow-y: scroll; }
+  #map #map_container {
+    height: 50%;
+    width: 100%; } }
 @media (max-width: 400px) {
   #photos {
     -moz-column-count: 1;
