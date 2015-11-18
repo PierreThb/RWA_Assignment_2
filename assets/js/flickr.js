@@ -18,12 +18,12 @@ Flickr.prototype = {
             type: 'GET',
             data: {
                 method: 'flickr.people.getPublicPhotos',
-                api_key: 'ca53bc81589d3ad195743451a4d28869',
+                api_key: '65b72d0896274b08406273ce69db4f59',
                 user_id: '136111591@N02',
                 format: 'json',
                 nojsoncallback: '1',
-                auth_token: '72157660572844919-8e4de90c75e75a14',
-                api_sig: '4afba70cad92d15201e142818fd9c1bf'
+                auth_token: '72157659044746593-de9fbe6ba8cef4b5',
+                api_sig: '25f3bae3d4de72e13b85cb62cc2eb1f2'
             }
         }).success(function (data) {
             console.log(data);
