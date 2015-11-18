@@ -1,3 +1,5 @@
+<?php header("Access-Control-Allow-Origin: http://localhost"); ?>
+
 <!DOCTYPE html>
 
 
@@ -9,10 +11,14 @@
 
         <!-- To be changed with the custome versions of jquery-mobile -->
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        
+        <link rel="stylesheet" href="assets/css/home.css" />
+        
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <script src="assets/js/blog.js" ></script>
-        <script src="assets/js/flickr.js"></script>
+        <script src="assets/js/blog.js" type="text/javascript"  ></script>
+        <script src="assets/js/flickr.js" type="text/javascript" ></script>
+        <script src="assets/js/map.js" type="text/javascript" ></script>
     </head>
     <body>
         <!-- Début HOMEPAGE -->
@@ -26,7 +32,7 @@
                 <ul data-role="listview">
                     <li data-icon="edit" ><a href="#blog">Blog</a></li>
                     <li data-icon="grid" ><a href="#flickr">Pictures</a></li>
-                    <li data-icon="location" ><a href="#bar">Map</a></li>
+                    <li data-icon="location" ><a href="#map">Map</a></li>
                 </ul>
             </div><!-- /content -->
 
@@ -57,7 +63,22 @@
 
             <!-- Contenu -->
             <div data-role="content" id="image">
-                
+
+            </div>
+
+            <div data-position="fixed" data-role="footer">
+                <h4><a href="#home">Back to homepage</a></h4>
+            </div><!-- /footer -->
+        </div>
+        <div data-role="page" id="map" >
+            <div data-role="header">
+                <h1>Flickr</h1>
+            </div>
+
+            <!-- Contenu -->
+            <div data-role="content" class="full_height ui-grid-a" >
+                <div id="map_container" class="ui-block-a" ></div>
+                <div id="map_direction" class="ui-block-b" ></div>
             </div>
 
             <div data-position="fixed" data-role="footer">
@@ -65,7 +86,6 @@
             </div><!-- /footer -->
         </div>
         <script src="assets/js/home.js" ></script>
-<!--        <script src="https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=ca53bc81589d3ad195743451a4d28869&user_id=136111591%40N02&format=json&auth_token=72157660572844919-8e4de90c75e75a14&api_sig=bb6bb873aa97d3c50adfb18496b5561e" type="text/javascript"></script>-->
-            
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4wcYndpXCDGPxRRm5r5yhIJOfoyE8Fi8&callback=initMap"></script>
     </body>
 </html>

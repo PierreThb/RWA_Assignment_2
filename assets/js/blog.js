@@ -21,7 +21,7 @@ Blog.prototype = {
         $.ajax({
             url: 'http://cowgow.byethost7.com',
             type: 'GET',
-            dataType: 'jsonp',
+            dataType: 'json',
             data: {json: 1}
         }).success(function (data) {
             $.mobile.loading("hide");
@@ -33,7 +33,6 @@ Blog.prototype = {
     displayPosts: function (postsArr) {
         var $posts = $('<div/>');
         $.each(postsArr, function (index, post) {
-            console.log(post);
             var $resume = $($(post.content)[0]);
             $resume.text($resume.text() + '...');
             var $dummyDiv = $('<div/>')

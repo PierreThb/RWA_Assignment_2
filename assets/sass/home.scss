@@ -6,3 +6,22 @@
 html{
     content: "Processing";
 }
+
+.full_height{
+    margin: 0px;
+    padding: 0px;
+    height: 90%;
+}
+
+#map{
+    height: 90%;
+    
+    #map_direction{
+        max-height: 100%;
+        overflow-y:scroll;
+    }
+    
+    #map_container{
+        height: 100%;
+    }
+}
