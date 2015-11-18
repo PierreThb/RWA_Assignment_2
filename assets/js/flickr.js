@@ -27,6 +27,7 @@ Flickr.prototype = {
             }
         }).success(function (data) {
             console.log(data);
+            
             if (data.stat === 'ok') {
                 var output = $("<div/>", {id: "my_div"});
                 $.each(data.photos.photo, function (index, val) {
