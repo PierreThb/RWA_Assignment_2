@@ -11,12 +11,11 @@
 
         <!-- To be changed with the custome versions of jquery-mobile -->
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-        <link rel="stylesheet" href="assets/css/justifiedGallery.min.css"
-              <link rel="stylesheet" href="assets/css/home.css" />
-
+        
+        <link rel="stylesheet" href="assets/css/home.css" />
+        
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <script src="assets/js/jquery.justifiedGallery.min.js"></script>
         <script src="assets/js/blog.js" type="text/javascript"  ></script>
         <script src="assets/js/flickr.js" type="text/javascript" ></script>
         <script src="assets/js/map.js" type="text/javascript" ></script>
