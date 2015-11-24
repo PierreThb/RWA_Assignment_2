@@ -38,7 +38,7 @@ Blog.prototype = {
         $.each(postsArr, function (index, post) {
             console.log(post.thumbnail);
             var $thumb = $("<img/>", {
-                src: post.thumbnail,
+                src: post.thumbnail || 'assets/images/bottle.png',
                 class: 'thumbnail'
             });
             var $resume = $($(post.content)[0]);

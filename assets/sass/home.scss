@@ -72,11 +72,15 @@ html{
     column-count:         5;
     column-gap:           5px;
 
-    img {
-        /* Just in case there are inline attributes */
-        width: 100% !important;
-        height: auto !important;
-        margin-bottom : 10px !important;
+    &>a {
+        height: 100%;
+        display: inline-block;
+
+        img{
+            width: 100% !important;
+            height: auto !important;
+            margin-bottom : 10px !important;
+        }
     }
 }
 

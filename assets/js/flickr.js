@@ -19,17 +19,18 @@ Flickr.prototype = {
             type: 'GET',
             data: {
                 method: 'flickr.people.getPublicPhotos',
-                api_key: 'e9b9fd859bfb0eb780853a74aa165146',
+                api_key: 'd9412673366d217893d67eef7edc0560',
                 user_id: '136111591@N02',
                 format: 'json',
                 nojsoncallback: '1',
-                auth_token: '72157660823674147-674f3f6a43e64fb0',
-                api_sig: '18214db396f4d526bfd722ee6702b3aa'
+                // auth_token: '72157660823674147-674f3f6a43e64fb0'
+//                api_sig: '18214db396f4d526bfd722ee6702b3aa'
             }
         }).success(function (data) {
             if (data.stat === 'ok') {
                 self.displayImages(data.photos.photo);
             } else {
+                console.log(data);
                 var $err = $("<p/>").css("color", "red").text("An error occured : impossible to access flickr photos")
                 $("#image").append($err);
             }
@@ -40,47 +41,55 @@ Flickr.prototype = {
         //Appelé après la transition
 
     },
-    displayImages:function (imgArr) {
-        var $div = $('<div/>', {id: 'photos'});
+    displayImages: function (imgArr) {
+        var $imgRoot = $('<div/>', {id: 'photos'});
         $.each(imgArr, function (index, val) {
-//            console.log(val);
-            var $my_a = $('<a/>',{
-                'href':'#popup'+val.title,
-                'data-rel':'popup',
-                'data-position-to':"window",
-                'data-transition':'fade'
+            var $my_a = $('<a/>', {
+                'href': '#popup_' + val.id,
+                'data-rel': 'popup',
+                'data-position-to': "window",
+                'data-transition': 'fade'
             });
             var $img = $("<img/>", {
-                'class':"popphoto", 
+                'class': "popphoto",
                 src: 'https://farm' + val.farm + '.staticflickr.com/' + val.server + '/' + val.id + '_' + val.secret + '.jpg'
             });
-            var $popup = $("<div/>",{
-                'data-role':"popup",
-                'id':'popup'+val.title,
-                'data-overlay-theme':"b",
-                'data-theme':"b",
-                'data-corners':"false"
+            var $popup = $("<div/>", {
+                'data-role': "popup",
+                'id': 'popup_' + val.id
             });
-            var $aInsidePopup = $("<a/>",{
-                'href':'#',
-                'data-rel':'back',
-                'class':'ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right'
+            var $aInsidePopup = $("<a/>", {
+                'href': '#',
+                'data-rel': 'back',
+                'class': 'ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right'
             }).text("Close");
-            var $enlargedImg = $("<img/>",{
-               'class':'popphoto',
-               'src':'https://farm' + val.farm + '.staticflickr.com/' + val.server + '/' + val.id + '_' + val.secret + '.jpg',
-               'style':'max-height:512px'
-            });
-//            console.log($my_a);
             
-            $div.append($my_a);
+            var imgSrc = 'https://farm' + val.farm +
+                    ['.staticflickr.com',val.server,''].join('/') +
+                    [val.id,val.secret,'b'].join('_') + '.jpg';
+            console.log(imgSrc);
+            var $enlargedImg = $("<img/>", {
+                'class': 'popphoto',
+                'src': imgSrc,
+                'style': 'max-height:512px'
+            });
+
             $my_a.append($img);
             $popup.append($aInsidePopup);
             $popup.append($enlargedImg);
-            
+            $imgRoot.append($my_a);
+
+            $popup.on({popupbeforeposition: function () {
+                    var maxHeight = $(window).height() - 60 + "px";
+                    $(this).find('img').css("height", maxHeight);
+                    console.log($(this).find('img'));
+                }});
+
+            $.mobile.activePage.append($popup.get(0)).trigger("pagecreate");
         });
-        $("#image").append($div);
+        $("#flickr").page("destroy").page();//Here is the solution
+        $("#image").append($imgRoot);
     }
 };
 
-window.flickr = new Flickr();   
+window.flickr = new Flickr();

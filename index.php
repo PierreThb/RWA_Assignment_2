@@ -5,12 +5,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="assets/images/bottle32.png" />
         <title>Champagne houses</title>
 
         <!-- To be changed with the custome versions of jquery-mobile -->
         <link type="text/css" rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 
         <link type="text/css" rel="stylesheet" href="assets/css/home.css" />
+        
 
         <!--Libraries-->
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -71,8 +73,8 @@
 
 
         <!-- Début BLOG -->
-        <div data-role="page" id="blog">
-            <div data-role="header">
+        <div data-role="page" id="blog"  >
+            <div data-role="header" data-position="fixed" >
                 <h1>Blog</h1>
             </div><!-- /header -->
 
