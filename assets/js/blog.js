@@ -15,29 +15,41 @@ Blog.prototype = {
     afterLoad: function () {
         $.mobile.loading('show', {
             text: "Loading blog content",
-            textVisible: true,
+            textVisible: true
         });
         var self = this;
         $.ajax({
-            url: 'http://cowgow.byethost7.com',
+            url: 'http://cowgow.byethost7.com/',
             type: 'GET',
             dataType: 'json',
-            data: {json: 1}
-        }).success(function (data) {
-            $.mobile.loading("hide");
-            self.displayPosts(data.posts);
-        }).fail(function (er) {
-            console.error(er);
+            data: {json: 1}, //Count to reduce the number of posts
+            error: function (er) {
+                var $p = $("<p/>", {class: 'error-text'}).text("An error occured");
+                $("#blog_content").append($p);
+            },
+            success: function (data) {
+                $.mobile.loading("hide");
+                self.displayPosts(data.posts);
+            }
         });
     },
     displayPosts: function (postsArr) {
         var $posts = $('<div/>');
         $.each(postsArr, function (index, post) {
+            console.log(post.thumbnail);
+            var $thumb = $("<img/>", {
+                src: post.thumbnail,
+                class: 'thumbnail'
+            });
             var $resume = $($(post.content)[0]);
             $resume.text($resume.text() + '...');
-            var $dummyDiv = $('<div/>')
-                    .append($('<a/>').wrap('h4').text(post.title).attr({"href": post.url, 'target': '_blank'}))
-                    .append($('<p/>').html($resume));
+            var $dummyDiv = $('<div/>', {
+                class: 'blog-post ui-corner-all ui-overlay-shadow ui-btn ui-btn-icon-right ui-icon-arrow-r'
+            })
+                    .append($("<div/>")
+                            .append($('<a/>').wrap('h4').text(post.title).attr({"href": post.url, 'target': '_blank'}))
+                            .append($('<p/>').html($resume.html())));
+            $dummyDiv.prepend($thumb);
             $posts.append($dummyDiv);
         });
         $('#blog_content').append($posts);

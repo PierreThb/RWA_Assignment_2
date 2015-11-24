@@ -13,6 +13,38 @@ html{
     height: 90%;
 }
 
+.blog-post{
+    .thumbnail{
+        width: 5vw;
+        height : auto;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 5px;
+    }
+
+    &>div{       
+
+        p{
+            margin: 1px;
+        }
+
+        vertical-align: middle;
+        display: inline-block;
+        width : 90%;
+        height: auto;
+        white-space: normal;
+
+    }
+
+    text-align : left;
+
+    width: 75vw;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 #map{
     height: 90%;
 
@@ -24,6 +56,10 @@ html{
     #map_container{
         height: 100%;
     }
+}
+
+.error-text{
+    color : #B21212;
 }
 
 #photos{
