@@ -7,11 +7,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat; }
 
-.full_height {
-  margin: 0px;
-  padding: 0px;
-  height: 90%; }
-
 .ui-popup-container .ui-content > h2:first-child {
   margin-top: 40px; }
 
@@ -83,13 +78,18 @@ body {
     .blog-post > div p {
       margin: 1px; }
 
-#map {
-  height: 90%; }
-  #map #map_direction {
-    max-height: 100%;
-    overflow-y: scroll; }
-  #map #map_container {
-    height: 100%; }
+#map #map_direction {
+  max-height: 100%;
+  overflow-y: scroll;
+  background-color: white; }
+#map #map_container {
+  height: 100%; }
+#map > .ui-content {
+  position: absolute;
+  top: 45px;
+  bottom: 45px;
+  left: 5px;
+  right: 5px; }
 
 .error-text {
   color: #B21212; }
