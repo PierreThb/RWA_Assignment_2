@@ -2,13 +2,51 @@
     Created on : 14 nov. 2015, 16:51:20
     Author     : boutina
 */
-html {
-  content: "Processing"; }
+body {
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 .full_height {
   margin: 0px;
   padding: 0px;
   height: 90%; }
+
+#home #blog_link {
+  background: url("../images/wordpress.jpg") no-repeat;
+  background-size: cover; }
+#home #pictures_link {
+  background: url("../images/flickr.jpg") no-repeat;
+  background-size: cover; }
+#home #map_link {
+  background: url("../images/map.jpg") no-repeat;
+  background-size: cover; }
+#home .ui-content {
+  /*position: absolute;  make it absolute */
+  top: 45px;
+  /* the height of the other element + its margin */
+  bottom: 45px;
+  left: 0;
+  /* stick to the left */
+  right: 0;
+  /* stick to the right */ }
+#home .ui-grid-a {
+  height: 50%; }
+  #home .ui-grid-a .ui-block-a, #home .ui-grid-a .ui-block-b {
+    height: 100%; }
+  #home .ui-grid-a a {
+    color: black;
+    text-shadow: 0px 0px 18px white;
+    font-size: 2em;
+    height: 90%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  #home .ui-grid-a .ui-btn-icon-top::after {
+    width: 50px;
+    height: 50px;
+    top: 1em; }
 
 .blog-post {
   text-align: left;

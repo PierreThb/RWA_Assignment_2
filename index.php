@@ -10,9 +10,9 @@
 
         <!-- To be changed with the custome versions of jquery-mobile -->
         <link type="text/css" rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-
+        <link type="text/css" rel="stylesheet" href="assets/css/Nature.css" />
         <link type="text/css" rel="stylesheet" href="assets/css/home.css" />
-        
+
 
         <!--Libraries-->
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -59,11 +59,22 @@
                     </div>
                 </div>
 
-                <ul data-role="listview">
-                    <li data-icon="edit" ><a href="#blog">Blog</a></li>
-                    <li data-icon="grid" ><a href="#flickr">Pictures</a></li>
-                    <li data-icon="location" ><a href="#map">Map</a></li>
-                </ul>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a id="blog_link" class="ui-btn ui-btn-icon-top ui-icon-edit btn-home"  href="#blog">Blog</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a id="pictures_link" class="ui-btn ui-btn-icon-top ui-icon-grid bth-home" href="#flickr">Pictures</a>
+                    </div>
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a id="map_link" class="ui-btn ui-btn-icon-top ui-icon-location btn-home" href="#map">Map</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a id="map_link" class="ui-btn ui-btn-icon-top ui-icon-location btn-home" href="#map">Whatever</a>
+                    </div>
+                </div>
             </div>
 
             <div data-role="footer" data-position="fixed">
@@ -101,7 +112,7 @@
                 <h4><a href="#home">Back to homepage</a></h4>
             </div><!-- /footer -->
         </div>
-        
+
         <!--DÉBUT MAP-->
         <div data-role="page" id="map" >
             <div data-role="header">
