@@ -12,6 +12,13 @@ body {
   padding: 0px;
   height: 90%; }
 
+.ui-popup-container .ui-content > h2:first-child {
+  margin-top: 40px; }
+
+#contact > .ui-grid-b {
+  text-align: center;
+  color: black; }
+
 #home #blog_link {
   background: url("../images/wordpress.jpg") no-repeat;
   background-size: cover; }
@@ -21,32 +28,39 @@ body {
 #home #map_link {
   background: url("../images/map.jpg") no-repeat;
   background-size: cover; }
-#home .ui-content {
-  /*position: absolute;  make it absolute */
-  top: 45px;
-  /* the height of the other element + its margin */
-  bottom: 45px;
-  left: 0;
-  /* stick to the left */
-  right: 0;
-  /* stick to the right */ }
+#home #contact_link {
+  background: url("../images/contact.jpg") no-repeat;
+  background-size: cover; }
 #home .ui-grid-a {
-  height: 50%; }
-  #home .ui-grid-a .ui-block-a, #home .ui-grid-a .ui-block-b {
-    height: 100%; }
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  border-color: transparent; }
   #home .ui-grid-a a {
     color: black;
     text-shadow: 0px 0px 18px white;
     font-size: 2em;
-    height: 90%;
-    box-sizing: border-box;
-    display: flex;
+    flex: 1;
     justify-content: center;
-    align-items: center; }
+    flex-direction: column;
+    display: flex;
+    margin: 5px; }
+    #home .ui-grid-a a:hover {
+      background-color: white; }
   #home .ui-grid-a .ui-btn-icon-top::after {
     width: 50px;
     height: 50px;
     top: 1em; }
+#home > .ui-content {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  bottom: 50px;
+  right: 0;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
 
 .blog-post {
   text-align: left;
