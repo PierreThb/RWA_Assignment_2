@@ -16,4 +16,6 @@ $(document).ready(function () {
         var nwObj = window[$(nwPage).attr('id')];
         nwObj && nwObj.afterLoad && nwObj.afterLoad();
     });
+    
+    $(window).resize();//To 'properly' update the css
 });

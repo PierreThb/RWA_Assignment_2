@@ -25,7 +25,7 @@ Map.prototype = {
         var image = {
             url: 'assets/images/bottle64.png',
             // This marker is 20 pixels wide by 32 pixels high.
-            size: new google.maps.Size(64, 67),
+            size: new google.maps.Size(58, 64),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(32, 64)
         };
