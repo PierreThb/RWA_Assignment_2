@@ -19,10 +19,10 @@ Flickr.prototype = {
             type: 'GET',
             data: {
                 method: 'flickr.people.getPublicPhotos',
-                api_key: '20c8620d2d1aea392ba49d0cf0c4ce6a',
+                api_key: '2e2b04bc51fa38fb9aa8ab2ec984853e',
                 user_id: '136111591@N02',
                 format: 'json',
-                nojsoncallback: '1',
+                nojsoncallback: '1'
                 // auth_token: '72157660823674147-674f3f6a43e64fb0'
 //                api_sig: '18214db396f4d526bfd722ee6702b3aa'
             }
