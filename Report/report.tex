@@ -1,0 +1,181 @@
+\documentclass[12pt]{report}%
+\usepackage[utf8]{inputenc}%
+\usepackage[T1]{fontenc}%
+\usepackage[UKenglish]{babel,datetime}%english gestion
+\usepackage{hyperref}
+\usepackage[bottom]{footmisc}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[newparttoc]{titlesec}
+\usepackage[export]{adjustbox}
+\usepackage[margin=0.95in]{geometry}
+
+%All the packages
+\usepackage{lmodern,ragged2e,textcomp,lmodern}
+\usepackage{graphicx,xcolor,float,fancyhdr}
+\usepackage{chngcntr,times,lastpage,setspace}
+\usepackage{subcaption,wrapfig,fancyhdr,blindtext}
+\usepackage{titletoc,afterpage,transparent}
+
+
+%Nouvelles commandes
+\newcommand{\periodafter}[1]{#1 -}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\Mline}{\hrule \mbox{}\\[0.1cm]}
+\renewcommand{\thechapter}{\Roman{chapter}}%Changing chapter numbering
+\renewcommand*\thesection{\arabic{section}}%Changin section numbering
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
+%FORMAT DU CHAPITRE (table of content compris)
+\titleclass{\chapter}{top}
+\titleformat{\chapter}[hang]
+  {}
+  {\normalfont \bfseries \large \thechapter. \hspace{0.2cm} }
+  {0pt}
+  {\normalfont \large \bfseries }
+  [{\color{gray}\titlerule[1pt]}]
+\titlespacing*{\chapter}{0pt}{50pt}{18pt}
+
+
+%Format section
+\titleclass{\section}{straight}
+\titleformat{\section}[hang]
+  {}
+  {\normalfont \hspace{1cm} \bfseries \thesection. \hspace{0.5cm} }
+  {0pt}
+  {\normalfont \bfseries }
+\titlespacing*{\section}{0pt}{50pt}{18pt}
+
+%Format subsection
+\titleclass{\subsection}{straight}
+\titleformat{\subsection}[hang]
+  {}
+  {\normalfont \hspace{2cm} \bfseries \thesubsection. }
+  {0pt}
+  {\normalfont \bfseries }
+\titlespacing*{\subsection}{0pt}{40pt}{10pt}
+
+%NEW DATE FORMAT
+\newdateformat{ComputerDate}{\THEDAY /\THEMONTH /\THEYEAR}
+
+%CHANGE LINE SPACING
+\renewcommand{\baselinestretch}{1.5} 
+
+%CHANGE FIGURE NUMBERING
+\renewcommand\thefigure{\arabic{figure}}
+
+%PREVENT FIGURES FROM RESETING EACH CHAPTER
+\counterwithout{figure}{chapter}
+
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+ \fbox{\includegraphics[width=0.4\textwidth]{images/ITB.png}}\\[0.4cm]
+
+{ \Huge \textbf{ASSIGNMENT COVER SHEET} \\[0.4cm] }
+\end{center}\mbox{}\\[1cm]
+\begin{Large}
+{\setstretch{1.5}
+\textbf{Students Name and ID : }Pierre Thubé (B00092354) -  Azarias Boutin (B00092351) \\
+\textbf{Course : } Rich Web application\\
+\textbf{Year : } Third year\\
+\textbf{Lecturer : } Orla McMahon \\
+\textbf{Title of assignment : } Rich Web Applications : Assignment 2 \\
+\textbf{Due Date : } 6th December 2015 \\
+\textbf{Date Submitted :} \today  \\
+\par}
+
+\end{Large}
+
+\begin{justify}
+The material contained in this assignment is the authors original work, except where work quoted is duly acknowledged in the text. No aspect of this assignment has been previously submitted for assessment in any other unit or course.  
+\end{justify}
+\end{titlepage}
+
+\setcounter{page}{2}
+
+\chapter*{Abstract}
+This report explain the steps in the development of a web application for desktop which is adaptable for other device like smartphones or tablets, from the conceptual planning and design to the realisation. This application has been realized in group of two, dividing the work according to forces and weaknesses of each. This website had to be a professional and engaging web application that will enhance the user experience when using it. 
+
+\tableofcontents
+\clearpage
+
+
+\chapter{Application}
+\section{Technologies}
+We used HTML, CSS, JavaScript, jQuery for mobile and JSON to realize the application.\\
+For the three main sections, we used one API for each. For the blog, we used Wordpress API's to set up a blog where we are displaying information with the JSON plug-in.\\
+For the section called "Pictures", we used Flickr API's to display photos from a Flickr account.\\
+For the GoogleMap section, we used the GoogleMap API's.
+\section{Design}
+\subsection{Form}
+The application is composed of an header, a content part and a footer. On the content page you can find four different sections, each one display something different.
+\subsection{Background}
+For the design, we choose a background pictures related to our subject, houses of champagne in France.\\
+\subsection{jQuery Theme}
+For the jQuery theme, we used the jQuery theme roller to custom one. We choose colors in relation with nature because we thought this was pretty beautiful and in related to the champagne. Thus, you can find on the application hood and green background and green buttons for example.
+\subsection{Pictures}
+Pictures are display in grid format. We used CSS code which create the grid in function of the size of each picture because all pictures doesn't have the same original size, thereby the CSS code create the grid taking account of the size and doesn't alter the quality of each pictures keeping the scale of pictures.
+
+
+\chapter{Group work}
+
+
+\chapter{Researches}
+\section{Existing JavaScript frameworks and libraries}
+In today's world, javascript is one of the most used language. To help developpers to be more efficient and to produce maintainable code a lots of frameworks and libraries are being developed. 
+
+\subsection{Most common ones}
+Here is a list of the most famous JavaScript frameworks and libraries,a short description,  the strength and weakness of each.
+
+\begin{description}
+	\item[Angular.js] : Developped by Google, the DOM is directly linked with the data. Follow the MVW (model-view-whatever) architectural pattern. Is open source and available on Github. \begin{description}
+		\item[Strengths] : automatic UI refreshing. MVW pattern make it easier to maintain.
+		\item[Weaknesses] : still in development is really complex when going a bit deeper.
+	\end{description}
+	\item[Backbone.js] : Developped by a community. Help to interact with the DOM and give access to function to facilitate data processing. Is also open source and available on Github. \begin{description}
+		\item[Strengths] : Really useful when a lot of data processing is required. (Thanks to underscore.js)
+		\item[Weaknesses] : DOM manipulation is still at a low level.
+	\end{description}
+	\item[Knockout.js] : To provide fully interactive website. Permit high level DOM manipulation by binding the DOM to the model. \begin{description}
+	\item[Strengths] : Hight level DOM manipulation. Automatic UI refreshing
+	\item[Weaknesses] : Only useful for DOM manipulation. Does not help go structure the code. 
+	\end{description}
+	\item[Knockback.js] : Fusion of Backbone.js and knockout.js \begin{description}
+		\item[Strengths] : strengths of both backbone and knockout.js : ease data processing,routing and hight level DOM manipulation with automatic UI refreshing
+		\item[Weaknesses] : Really heavy.
+	\end{description}
+	\item[Vue.js] : DOM manipulation at the highest level. Concentrate on DOM manipulation from data. Usefull to create super interactive websites. \begin{description}
+		\item[Strengths] : Make it really easier to manipulate DOM
+		\item[Weakness] : Used only to manipulate DOM
+	\end{description}
+\end{description}
+
+There are a lost of others javascript framework, but some of them also have a single goal (e.g. Raphaël.js for SVG manipulation).
+
+
+\subsection{Mobile application related ones}
+The previous frameworks and libraries are not optimised for mobile applications development.\\
+Here is a list of some existing alternatives to jquery Mobile.
+
+\begin{description}
+	\item[Cordova] : More than just create an mobile application, it enable the develper to compile and install it on the most commons mobile platforms. i.e. Android,IOS, Windows phone, Blackberry.
+	\item[Ratchet] : Created by twitter Bootstrap's developers. It comes with a collection of User Interface and JavaScript plugins for building simple mobile applications, providing reusable HTML classes.
+	\item[Ionic] : Framework to create mobile application with high performances. It works best together with Angular.js to build an interactive app. Similar to Ratchet, Ionic is shipped with a nicely crafted font icon set, Ionicons, and a bunch of reusable HTML classes to build the mobile UI.
+	\item[Lungo] : a lightweight mobile framework based on HTML5 and CSS3. Lungo brings a number of JavaScript API to control the app.
+\end{description}
+
+
+\chapter{Conclusion}
+***
+
+\clearpage
+%Breakdown
+
+
+\end{document}
