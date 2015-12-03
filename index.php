@@ -134,7 +134,7 @@
                     <h3>Join us on facebook</h3>
                     <div id="fb-root"></div>
                     <div class="fb-like" data-layout="box_count" ></div>
-                    <!--<div class="fb-follow social-div" data-href="https://www.facebook.com/zuck" data-layout="box_count" data-show-faces="true"></div>-->
+                    <div class="fb-follow social-div" data-href="https://www.facebook.com/zuck" data-layout="box_count" data-show-faces="true"></div>
                 </div>
                 <div class="ui-block-b">
                     <h3>Talk with us on twitter</h3>
@@ -157,10 +157,10 @@
         <!--Google maps API-->
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4wcYndpXCDGPxRRm5r5yhIJOfoyE8Fi8&callback=initMap"></script>
         <!--Google plus API-->
-        <!--<script src="https://apis.google.com/js/platform.js" async defer></script>-->
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
         <!--Twitter API-->
-        <!--<script async defer src="https://platform.twitter.com/widgets.js"></script>-->
+        <script async defer src="https://platform.twitter.com/widgets.js"></script>
         <!--Facebook API-->
-        <!--<script defer src="https://connect.facebook.net/en_IRL/sdk.js#xfbml=1&version=v2.5" ></script>-->
+        <script defer src="https://connect.facebook.net/en_IRL/sdk.js#xfbml=1&version=v2.5" ></script>
     </body>
 </html>
