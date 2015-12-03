@@ -1,2 +1,5 @@
 /nbproject/private/
 /nbproject
+Report/*
+!Report/report.tex
+!Report/Assign_cover.pdf
