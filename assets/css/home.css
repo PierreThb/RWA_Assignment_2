@@ -1,0 +1,127 @@
+/*
+    Created on : 14 nov. 2015, 16:51:20
+    Author     : boutina
+*/
+body {
+  background-image: url("../images/background.jpg");
+  background-size: auto;
+  background-repeat: repeat-y; }
+
+.ui-popup-container .ui-content > h2:first-child {
+  margin-top: 40px; }
+
+#contact > .ui-grid-b {
+  text-align: center;
+  color: black; }
+
+#home #blog_link {
+  background: url("../images/wordpress.jpg") no-repeat;
+  background-size: cover; }
+  #home #blog_link:hover {
+    -webkit-filter: none; }
+#home #pictures_link {
+  background: url("../images/flickr.jpg") no-repeat;
+  background-size: cover; }
+  #home #pictures_link:hover {
+    -webkit-filter: none; }
+#home #map_link {
+  background: url("../images/map.jpg") no-repeat;
+  background-size: cover; }
+  #home #map_link:hover {
+    -webkit-filter: none; }
+#home #contact_link {
+  background: url("../images/contact.jpg") no-repeat;
+  background-size: cover; }
+  #home #contact_link:hover {
+    -webkit-filter: none; }
+#home div[data-role="main"]:hover a {
+  -webkit-filter: blur(2px) grayscale(1); }
+#home div[data-role="main"] a {
+  transition: all 0.2s ease; }
+#home .ui-grid-a {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  border-color: transparent; }
+  #home .ui-grid-a a {
+    color: black;
+    text-shadow: 0px 0px 18px white;
+    font-size: 2em;
+    flex: 1;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    margin: 5px; }
+    #home .ui-grid-a a:hover {
+      background-color: white; }
+  #home .ui-grid-a .ui-btn-icon-top::after {
+    width: 50px;
+    height: 50px;
+    top: 1em; }
+#home > .ui-content {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  bottom: 50px;
+  right: 0;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+
+.blog-post {
+  text-align: left;
+  width: 75vw;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto; }
+  .blog-post .thumbnail {
+    width: 5vw;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px; }
+  .blog-post a:visited {
+    color: #123; }
+  .blog-post > div {
+    vertical-align: middle;
+    display: inline-block;
+    width: 90%;
+    height: auto;
+    white-space: normal; }
+    .blog-post > div p {
+      margin: 1px; }
+
+#map #map_direction {
+  max-height: 100%;
+  overflow-y: scroll;
+  background-color: white; }
+#map #map_container {
+  height: 100%; }
+#map > .ui-content {
+  position: absolute;
+  top: 45px;
+  bottom: 45px;
+  left: 5px;
+  right: 5px; }
+
+.error-text {
+  color: #B21212; }
+
+#photos {
+  line-height: 0;
+  -webkit-column-count: 5;
+  -webkit-column-gap: 5px;
+  -moz-column-count: 5;
+  -moz-column-gap: 5px;
+  column-count: 5;
+  column-gap: 5px; }
+  #photos > a {
+    height: 100%;
+    display: inline-block; }
+    #photos > a img {
+      width: 100% !important;
+      height: auto !important;
+      margin-bottom: 10px !important; }
+
+/*# sourceMappingURL=home.css.map */
