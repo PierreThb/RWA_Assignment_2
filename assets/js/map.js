@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -44,6 +44,8 @@ Map.prototype = {
 
 
         var contentString = '<div id="content" style="color : black;" >' +
+                '<p>Have you ever dream of having a house in France, more precisely in Champagne-Ardenne ?' +
+                'This website is made for you ! It can help you choose the perfect house, find places to visit and a lot more !</p>' +
                 '<img width="100" class="img-responsive" src="assets/images/bottle.png" />' +
                 '</div>';
 

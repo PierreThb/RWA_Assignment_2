@@ -1,11 +1,11 @@
-/* 
+/*
     Created on : 14 nov. 2015, 16:51:20
     Author     : boutina
 */
-body{    
+body{
     background-image : url('../images/background.jpg');
-    background-size : cover;
-    background-repeat : no-repeat;    
+    background-size : auto;
+    background-repeat : repeat-y;
 }
 
 .ui-popup-container .ui-content>h2:first-child{
@@ -19,27 +19,56 @@ body{
     }
 }
 
-
 #home {
     #blog_link{
         background : url('../images/wordpress.jpg') no-repeat;
         background-size : cover;
+
+        &:hover{
+            -webkit-filter : none;
+        }
     }
 
     #pictures_link{
         background : url('../images/flickr.jpg') no-repeat;
         background-size : cover;
+
+        &:hover{
+            -webkit-filter : none;
+        }
     }
 
     #map_link{
         background : url('../images/map.jpg') no-repeat;
         background-size : cover;
+
+        &:hover{
+            -webkit-filter : none;
+        }
     }
 
     #contact_link{
         background : url('../images/contact.jpg') no-repeat;
         background-size : cover;
+
+        &:hover{
+            -webkit-filter : none;
+        }
     }
+
+
+    div[data-role="main"]{
+
+        &:hover a{
+            -webkit-filter: blur(2px) grayscale(1);;
+        }
+
+        a{
+            transition : all 0.2s ease;            
+        }
+    }
+
+
 
     .ui-grid-a{
         a{
@@ -84,6 +113,7 @@ body{
 
 
 .blog-post{
+
     .thumbnail{
         width: 5vw;
         height : auto;
@@ -92,7 +122,11 @@ body{
         margin: 5px;
     }
 
-    &>div{       
+    a:visited{
+        color : #123;
+    }
+
+    >div{
 
         p{
             margin: 1px;
@@ -131,7 +165,7 @@ body{
         top : 45px;
         bottom : 45px;
         left : 5px;
-        right : 5px;   
+        right : 5px;
     }
 }
 
@@ -158,47 +192,5 @@ body{
             height: auto !important;
             margin-bottom : 10px !important;
         }
-    }
-}
-
-
-@media (max-width: 1200px) {
-    #photos {
-        -moz-column-count:    4;
-        -webkit-column-count: 4;
-        column-count:         4;
-    }
-}
-@media (max-width: 1000px) {
-    #photos {
-        -moz-column-count:    3;
-        -webkit-column-count: 3;
-        column-count:         3;
-    }
-}
-@media (max-width: 800px) {
-    #photos {
-        -moz-column-count:    2;
-        -webkit-column-count: 2;
-        column-count:         2;
-    }
-
-    #map{
-        #map_direction{
-            width:  100%;
-            overflow-y: scroll;
-        }
-
-        #map_container{
-            height: 50%;
-            width: 100%;
-        }
-    }
-}
-@media (max-width: 400px) {
-    #photos {
-        -moz-column-count:    1;
-        -webkit-column-count: 1;
-        column-count:         1;
     }
 }

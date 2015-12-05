@@ -22,9 +22,11 @@ Blog.prototype = {
             type: 'GET',
             dataType: 'json',
             data: {json: 1}, //Count to reduce the number of posts
-            error: function (er) {
-                var $p = $("<p/>", {class: 'error-text'}).text("An error occured");
+            error: function (er,data) {
+                console.log(er,data);
+                var $p = $("<p/>", {class: 'error-text'}).text("An error occured - may happen for security reasons");
                 $("#blog_content").append($p);
+                $.mobile.loading("hide");
             },
             success: function (data) {
                 $.mobile.loading("hide");
@@ -33,7 +35,9 @@ Blog.prototype = {
         });
     },
     displayPosts: function (postsArr) {
-        var $posts = $('<div/>');
+        var $posts = $('<div/>',{
+            "data-role" :"listview"
+        });
         $.each(postsArr, function (index, post) {
             console.log(post.thumbnail);
             var $thumb = $("<img/>", {

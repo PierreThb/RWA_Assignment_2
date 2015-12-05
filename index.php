@@ -12,6 +12,7 @@
         <link type="text/css" rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
         <link type="text/css" rel="stylesheet" href="assets/css/Nature.css" />
         <link type="text/css" rel="stylesheet" href="assets/css/home.css" />
+        <link media="screen and (max-width:1200px)" type="text/css" rel="stylesheet" href="assets/css/home-mobile.css" />
 
 
         <!--Libraries-->
@@ -30,9 +31,9 @@
         <!-- Début HOMEPAGE -->
         <div data-role="page" id="home">
             <div data-role="header" data-position="fixed">
-                <a href="#myPopupDialog" 
-                   data-rel="popup" 
-                   data-position-to="window" 
+                <a href="#myPopupDialog"
+                   data-rel="popup"
+                   data-position-to="window"
                    data-transition="pop"
                    class="ui-btn ui-icon-info ui-btn-icon-left ui-corner-all">
                     Information
@@ -43,8 +44,8 @@
             <div data-role="main" class="ui-content">
                 <div data-role="popup" id="myPopupDialog">
                     <div data-role="header" data-position="fixed">
-                        <a href="#" 
-                           class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left" 
+                        <a href="#"
+                           class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left"
                             data-rel="back" >close</a>
                         <h1>Informations</h1>
                     </div>
@@ -72,7 +73,7 @@
             <div data-role="footer" data-position="fixed">
                 <h1>Footer Text</h1>
             </div>
-        </div> 
+        </div>
 
 
         <!-- Début BLOG -->
@@ -129,7 +130,7 @@
             </div>
 
             <!-- Contenu -->
-            <div data-role="content" class="ui-grid-b" >
+            <div data-role="content" class="ui-grid-b" id="social-buttons" >
                 <div class="ui-block-a" >
                     <h3>Join us on facebook</h3>
                     <div id="fb-root"></div>
